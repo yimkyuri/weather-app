@@ -2,3 +2,19 @@ body {
   background: url('https://images.unsplash.com/photo-1558486012-817176f84c6d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center center;
   background-size:cover;
 }
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.weather-box {
+  border:3px solid #fff;
+  padding:50px;
+  border-radius: 30px;
+  color:#fff;
+  text-align: center;
+}
