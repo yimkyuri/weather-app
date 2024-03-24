@@ -30,7 +30,8 @@ function App() {
   }
   useEffect (() => {
     getCurrentLocation()
-  },[])
+    // eslint-disable-next-line
+  },[]);
   return (
     <div>
       <div className="container">
