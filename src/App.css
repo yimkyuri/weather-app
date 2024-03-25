@@ -13,8 +13,35 @@ body {
 
 .weather-box {
   border:3px solid #fff;
-  padding:50px;
+  padding:50px 100px;
   border-radius: 30px;
   color:#fff;
   text-align: center;
+}
+
+.container button {
+  text-transform: uppercase;
+  margin:20px 2px;
+}
+
+.container button.on {
+  background: #4caf50;
+  border-color: #4caf50;
+  position:relative;
+  color:#fff;
+}
+
+.container button.on::after {
+  content:'';
+  position:absolute;
+  display: block;
+  top:-20px;
+  left:50%; 
+  transform:translateX(-50%);
+  width:10px;
+  height:10px;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #4caf50;
 }

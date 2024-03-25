@@ -18,6 +18,7 @@ function App() {
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState('');
   const [loading, setLoading] = useState(false);
+  const [selectedCity, setSelectedCity] = useState(null);
   const cities = ['seoul', 'daejeon', 'daegu', 'busan']
   const getCurrentLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -32,6 +33,7 @@ function App() {
     setLoading(true);
     let response = await fetch(url);
     let data = await response.json();
+    setSelectedCity(null);
     setWeather(data);
     setLoading(false);
   }
@@ -41,6 +43,7 @@ function App() {
     setLoading(true);
     let response = await fetch(url);
     let data = await response.json();
+    setSelectedCity(city);
     setWeather(data);
     setLoading(false);
   }
@@ -63,7 +66,7 @@ function App() {
       ) : (
         <div className="container">
           <WeatherBox weather={weather}/>
-          <WeatherButton cities={cities} setCity={setCity} />
+          <WeatherButton cities={cities} setCity={setCity} selectedCity={selectedCity} />
         </div>
       )}
     </div>
